@@ -7,39 +7,27 @@ import com.grpcproject.userGrpc.userImplBase;
 
 import io.grpc.stub.StreamObserver;
 
-public class UserService extends userImplBase{
+public class UserService extends userImplBase {
 
 	@Override
 	public void login(LoginRequest request, StreamObserver<APIResponse> responseObserver) {
-		
-		System.out.println("Inside login");
-		
+
+		System.out.println("Login Verified");
+
 		String username = request.getUsername();
 		String password = request.getPassword();
-		
+		// Connecting via API
 		APIResponse.Builder response = APIResponse.newBuilder();
-		if(username.equals(password)) {
-			
-			 // return success message
-			
-			response.setResponseCode(0).setResponsemessage("SUCCESSFULLY VERIFIED");
-			
+		if (username.equals(password)) {
+
+			// Returning message for successful login
+			response.setResponseCode(0).setResponsemessage("Login Successful");
+
+		} else {
+			// Returning message for invalid password
+			response.setResponseCode(100).setResponsemessage("Invalid Login");
 		}
-		else {
-			response.setResponseCode(100).setResponsemessage("INVALID PASSWORD");
-		}
-		
-		
-		
 		responseObserver.onNext(response.build());
 		responseObserver.onCompleted();
 	}
-
-	@Override
-	public void logout(Empty request, StreamObserver<APIResponse> responseObserver) {
-		
-	}
-
-	
-	 
 }

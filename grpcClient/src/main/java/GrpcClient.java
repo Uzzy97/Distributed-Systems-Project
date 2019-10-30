@@ -10,18 +10,20 @@ public class GrpcClient {
 
 	public static void main(String[] args) {
 		
-		String user = "G00345816";
-		String pass = "G00345816";
-		
-		System.out.println("User ID = " + user +"\nUser Password = " + pass);
+		// Creating User ID
+		String userID = "G00345816";
+		// Creating Password for User  to login
+		String password = "G00345816";
+		// Printing User Id and Password
+		System.out.println("User ID = " + userID +"\nUser Password = " + password);
 		
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",9090).usePlaintext().build();
 		
-		// stubs - generate from proto
+		// stubs - generated from proto
 		
 		userBlockingStub userStub = userGrpc.newBlockingStub(channel);
 		
-		LoginRequest loginrequest = LoginRequest.newBuilder().setUsername(user).setPassword(pass).build();
+		LoginRequest loginrequest = LoginRequest.newBuilder().setUsername(userID).setPassword(password).build();
 		
 		APIResponse response = userStub.login(loginrequest);
 		
