@@ -113,7 +113,6 @@ public final class userGrpc {
 			asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
 		}
 
-		@java.lang.Override
 		public final io.grpc.ServerServiceDefinition bindService() {
 			return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
 					.addMethod(getLoginMethod(), asyncUnaryCall(
@@ -233,7 +232,6 @@ public final class userGrpc {
 			this.methodId = methodId;
 		}
 
-		@java.lang.Override
 		@java.lang.SuppressWarnings("unchecked")
 		public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
 			switch (methodId) {
@@ -250,7 +248,6 @@ public final class userGrpc {
 			}
 		}
 
-		@java.lang.Override
 		@java.lang.SuppressWarnings("unchecked")
 		public io.grpc.stub.StreamObserver<Req> invoke(io.grpc.stub.StreamObserver<Resp> responseObserver) {
 			switch (methodId) {
@@ -265,12 +262,10 @@ public final class userGrpc {
 		userBaseDescriptorSupplier() {
 		}
 
-		@java.lang.Override
 		public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
 			return com.grpcproject.User.getDescriptor();
 		}
 
-		@java.lang.Override
 		public com.google.protobuf.Descriptors.ServiceDescriptor getServiceDescriptor() {
 			return getFileDescriptor().findServiceByName("user");
 		}
@@ -289,7 +284,6 @@ public final class userGrpc {
 			this.methodName = methodName;
 		}
 
-		@java.lang.Override
 		public com.google.protobuf.Descriptors.MethodDescriptor getMethodDescriptor() {
 			return getServiceDescriptor().findMethodByName(methodName);
 		}

@@ -324,7 +324,6 @@ public final class User {
 			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
 		}
 
-		@java.lang.Override
 		public Builder newBuilderForType() {
 			return newBuilder();
 		}
@@ -337,7 +336,6 @@ public final class User {
 			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
 		}
 
-		@java.lang.Override
 		public Builder toBuilder() {
 			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
 		}
@@ -395,12 +393,10 @@ public final class User {
 				return com.grpcproject.User.internal_static_LoginRequest_descriptor;
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.LoginRequest getDefaultInstanceForType() {
 				return com.grpcproject.User.LoginRequest.getDefaultInstance();
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.LoginRequest build() {
 				com.grpcproject.User.LoginRequest result = buildPartial();
 				if (!result.isInitialized()) {
@@ -409,7 +405,6 @@ public final class User {
 				return result;
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.LoginRequest buildPartial() {
 				com.grpcproject.User.LoginRequest result = new com.grpcproject.User.LoginRequest(this);
 				result.username_ = username_;
@@ -660,7 +655,6 @@ public final class User {
 		}
 
 		private static final com.google.protobuf.Parser<LoginRequest> PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
-			@java.lang.Override
 			public LoginRequest parsePartialFrom(com.google.protobuf.CodedInputStream input,
 					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 					throws com.google.protobuf.InvalidProtocolBufferException {
@@ -677,7 +671,6 @@ public final class User {
 			return PARSER;
 		}
 
-		@java.lang.Override
 		public com.grpcproject.User.LoginRequest getDefaultInstanceForType() {
 			return DEFAULT_INSTANCE;
 		}
@@ -965,7 +958,6 @@ public final class User {
 			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
 		}
 
-		@java.lang.Override
 		public Builder newBuilderForType() {
 			return newBuilder();
 		}
@@ -978,7 +970,6 @@ public final class User {
 			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
 		}
 
-		@java.lang.Override
 		public Builder toBuilder() {
 			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
 		}
@@ -1036,12 +1027,10 @@ public final class User {
 				return com.grpcproject.User.internal_static_APIResponse_descriptor;
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.APIResponse getDefaultInstanceForType() {
 				return com.grpcproject.User.APIResponse.getDefaultInstance();
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.APIResponse build() {
 				com.grpcproject.User.APIResponse result = buildPartial();
 				if (!result.isInitialized()) {
@@ -1050,7 +1039,6 @@ public final class User {
 				return result;
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.APIResponse buildPartial() {
 				com.grpcproject.User.APIResponse result = new com.grpcproject.User.APIResponse(this);
 				result.responsemessage_ = responsemessage_;
@@ -1260,7 +1248,6 @@ public final class User {
 		}
 
 		private static final com.google.protobuf.Parser<APIResponse> PARSER = new com.google.protobuf.AbstractParser<APIResponse>() {
-			@java.lang.Override
 			public APIResponse parsePartialFrom(com.google.protobuf.CodedInputStream input,
 					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 					throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1277,7 +1264,6 @@ public final class User {
 			return PARSER;
 		}
 
-		@java.lang.Override
 		public com.grpcproject.User.APIResponse getDefaultInstanceForType() {
 			return DEFAULT_INSTANCE;
 		}
@@ -1476,7 +1462,6 @@ public final class User {
 			return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input, extensionRegistry);
 		}
 
-		@java.lang.Override
 		public Builder newBuilderForType() {
 			return newBuilder();
 		}
@@ -1489,7 +1474,6 @@ public final class User {
 			return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
 		}
 
-		@java.lang.Override
 		public Builder toBuilder() {
 			return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
 		}
@@ -1542,12 +1526,10 @@ public final class User {
 				return com.grpcproject.User.internal_static_Empty_descriptor;
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.Empty getDefaultInstanceForType() {
 				return com.grpcproject.User.Empty.getDefaultInstance();
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.Empty build() {
 				com.grpcproject.User.Empty result = buildPartial();
 				if (!result.isInitialized()) {
@@ -1556,7 +1538,6 @@ public final class User {
 				return result;
 			}
 
-			@java.lang.Override
 			public com.grpcproject.User.Empty buildPartial() {
 				com.grpcproject.User.Empty result = new com.grpcproject.User.Empty(this);
 				onBuilt();
@@ -1659,7 +1640,6 @@ public final class User {
 		}
 
 		private static final com.google.protobuf.Parser<Empty> PARSER = new com.google.protobuf.AbstractParser<Empty>() {
-			@java.lang.Override
 			public Empty parsePartialFrom(com.google.protobuf.CodedInputStream input,
 					com.google.protobuf.ExtensionRegistryLite extensionRegistry)
 					throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1676,7 +1656,6 @@ public final class User {
 			return PARSER;
 		}
 
-		@java.lang.Override
 		public com.grpcproject.User.Empty getDefaultInstanceForType() {
 			return DEFAULT_INSTANCE;
 		}

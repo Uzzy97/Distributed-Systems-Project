@@ -1,9 +1,10 @@
-package user;
+package com.user;
 
 import com.grpcproject.User.APIResponse;
-import server.Encryption;
 import com.grpcproject.User.LoginRequest;
 import com.grpcproject.userGrpc.userImplBase;
+import com.server.Encryption;
+
 import io.grpc.stub.StreamObserver;
 
 public class UserService extends userImplBase {
