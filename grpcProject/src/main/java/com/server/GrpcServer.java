@@ -18,6 +18,9 @@ public class GrpcServer {
 
 		// Salt - Encryption Method
 		System.out.println("Salted Password: " + Encryption.salt(password));
+		
+		// Salted Password - Hashed
+		//System.out.println("Salted Password - Hashed: " + );
 
 		// Starting GRPC Server...
 		System.out.println("***************************************************************");

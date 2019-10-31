@@ -16,6 +16,8 @@ public class UserService extends userImplBase {
 
 		String username = request.getUsername();
 		String password = request.getPassword();
+		String salted = Encryption.salt(password);
+		String saltedHash = Encryption.hash(salted);
 		// Username & Password Printed Out To Server
 		System.out.println("\nClient Username: " + request.getUsername());
 		System.out.println("Client Password: " + request.getPassword());
@@ -23,13 +25,17 @@ public class UserService extends userImplBase {
 		System.out.println("*************************************************************");
 		System.out.println("Hashed Username: " + Encryption.hash(username));
 		System.out.println("Salted Password: " + Encryption.salt(password));
+		// Salted Password - Hashed
+		System.out.println("\nSalted Hash Password: " + Encryption.hash(salted));
+		
 
 		// Connecting via API
 		APIResponse.Builder response = APIResponse.newBuilder();
 		if (username.equals(password)) {
 
 			// Returning message for successful login
-			response.setResponseCode(0).setResponsemessage("Login Successful");
+			response.setResponseCode(0).setResponsemessage("Login Successful\nPassword Validation = True");
+			
 
 		} else {
 			// Returning message for invalid password
