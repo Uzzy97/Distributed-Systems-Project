@@ -1,10 +1,9 @@
 package user;
 
 import com.grpcproject.User.APIResponse;
-import com.grpcproject.User.Empty;
+import server.Encryption;
 import com.grpcproject.User.LoginRequest;
 import com.grpcproject.userGrpc.userImplBase;
-
 import io.grpc.stub.StreamObserver;
 
 public class UserService extends userImplBase {
@@ -16,6 +15,13 @@ public class UserService extends userImplBase {
 
 		String username = request.getUsername();
 		String password = request.getPassword();
+
+		System.out.println("\nClient Username: " + request.getUsername());
+		System.out.println("Client Password: " + request.getPassword());
+		System.out.println("*************************************************************");
+		System.out.println("Hashed Username: " + Encryption.hash(username));
+		System.out.println("Salted Password: " + Encryption.salt(password));
+
 		// Connecting via API
 		APIResponse.Builder response = APIResponse.newBuilder();
 		if (username.equals(password)) {
