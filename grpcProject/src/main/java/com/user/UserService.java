@@ -11,14 +11,15 @@ public class UserService extends userImplBase {
 
 	@Override
 	public void login(LoginRequest request, StreamObserver<APIResponse> responseObserver) {
-
+		// Login Verfied Prints Out To Server
 		System.out.println("Login Verified");
 
 		String username = request.getUsername();
 		String password = request.getPassword();
-
+		// Username & Password Printed Out To Server
 		System.out.println("\nClient Username: " + request.getUsername());
 		System.out.println("Client Password: " + request.getPassword());
+		// Hash Username & Salt Password Printed Out To Server
 		System.out.println("*************************************************************");
 		System.out.println("Hashed Username: " + Encryption.hash(username));
 		System.out.println("Salted Password: " + Encryption.salt(password));

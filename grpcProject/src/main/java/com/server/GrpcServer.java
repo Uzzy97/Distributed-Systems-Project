@@ -25,7 +25,7 @@ public class GrpcServer {
 		Server server = ServerBuilder.forPort(9090).addService(
 
 				new UserService()).build();
-
+		// Server starting at port 9090
 		server.start();
 		System.out.println("server started at " + server.getPort());
 		server.awaitTermination();

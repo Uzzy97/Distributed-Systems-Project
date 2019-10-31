@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.security.*;
 
 public class Encryption {
-
+	// Converting To Hash Code
 	public static String hash(String str) {
 		try {
 
@@ -24,6 +24,7 @@ public class Encryption {
 		}
 	}
 
+	// Converting To Salt Code
 	public static String salt(String str) {
 		try {
 			MessageDigest mDigest = MessageDigest.getInstance("SHA1");
