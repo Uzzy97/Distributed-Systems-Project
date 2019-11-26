@@ -7,7 +7,7 @@ public class User {
 	String userName;
 	String email;
 	String password;
-	
+
 	@JsonProperty
 	public int getUserId() {
 		return userId;
@@ -28,13 +28,11 @@ public class User {
 		return password;
 	}
 
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public User(int userId, String userName, String email, String password) {
-		
-		
+
 	}
 }
