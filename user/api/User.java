@@ -1,4 +1,4 @@
-package ie.gmit.ds;
+package com.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -9,7 +9,8 @@ public class User {
 	private String password;
 	
 	public User() {
-	}
+        // Needed for Jackson deserialisation
+    }
 	
 	public User(int userId, String userName, String email, String password) {
         this.userId = userId;
@@ -17,7 +18,6 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
 	
 	@JsonProperty
 	public int getUserId() {
@@ -39,8 +39,9 @@ public class User {
 		return password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 }

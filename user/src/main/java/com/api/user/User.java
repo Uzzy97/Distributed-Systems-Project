@@ -1,23 +1,12 @@
-package ie.gmit.ds;
+package com.api.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
-	private int userId;
-	private String userName;
-	private String email;
-	private String password;
-	
-	public User() {
-	}
-	
-	public User(int userId, String userName, String email, String password) {
-        this.userId = userId;
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-    }
-
+	int userId;
+	String userName;
+	String email;
+	String password;
 	
 	@JsonProperty
 	public int getUserId() {
@@ -39,8 +28,13 @@ public class User {
 		return password;
 	}
 
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
+	public User(int userId, String userName, String email, String password) {
+		
+		
+	}
 }
