@@ -2,14 +2,8 @@ package com.api.user;
 
 import java.net.URI;
 import javax.ws.rs.core.Response.Status;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -17,7 +11,6 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -25,7 +18,7 @@ import javax.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 public class UserApiResource {
 
-	private final Validator validator;
+
 
 	//public UserApiResource() {
 //
@@ -33,8 +26,8 @@ public class UserApiResource {
 		//usersMap.put(testUser1.getUserId(), testUser1);
 	//}
 
-	public UserApiResource(Validator validator) {
-		this.validator = validator;
+	public UserApiResource() {
+		
 		usersMap.put(testUser.getUserId(), testUser);
 		usersMap.put(testUser1.getUserId(), testUser1);
 	}
@@ -71,8 +64,45 @@ public class UserApiResource {
 			return Response.status(Status.OK).build();
 
 	}
+	
+	// creating new user and returning the collections with new user//
+		@POST
+		public Response newUser(User user) throws Exception {
+					
+			int id = usersMap.size()+1;
+			
+			user.setUserId(id);
+			
+			String usernew = String.valueOf(user.getUserId());
+			
+			usersMap.put(id, user);
+		
+			return Response.created(new URI("/users/" + usernew)).entity(usersMap.get(user.getUserId())).status(Status.CREATED).build();
 
-	@POST
+		}
+	
+	/*@POST
+    public Response createUser(User user, int id) throws URISyntaxException {
+        // validation
+        Set<ConstraintViolation<User>> violations = validator.validate(user);
+        user = usersMap.get(id);
+       // Employee e = EmployeeDB.getEmployee(employee.getId());
+        if (violations.size() > 0) {
+            ArrayList<String> validationMessages = new ArrayList<String>();
+            for (ConstraintViolation<User> violation : violations) {
+                validationMessages.add(violation.getPropertyPath().toString() + ": " + violation.getMessage());
+            }
+            return Response.status(Status.BAD_REQUEST).entity(validationMessages).build();
+        }
+        if (user != null) {
+        	User.updateUser(user.getUserId(), user);
+            return Response.created(new URI("/users/" + user.getUserId()))
+                    .build();
+        } else
+            return Response.status(Status.NOT_FOUND).build();
+    }*/
+
+	/*@POST
 	public Response createUser(User user) throws URISyntaxException {
 		// validation
 		Set<ConstraintViolation<User>> violations = validator.validate(user);
@@ -90,7 +120,7 @@ public class UserApiResource {
 			return Response.created(new URI("/users/" + user.getUserId())).build();
 		} else
 			return Response.status(Status.OK).build();
-	}
+	}*/
 	
 
 	@PUT
