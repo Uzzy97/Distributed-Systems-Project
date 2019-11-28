@@ -13,7 +13,7 @@ public class UserApiApplication extends Application<UserApiConfig> {
 	@Override
 	public void run(UserApiConfig userApiConfig, Environment environment) throws Exception {
 		// TODO Auto-generated method stub
-        final UserApiResource resource = new UserApiResource();
+        final UserApiResource resource = new UserApiResource(null);
 
         environment.jersey().register(resource);
 	}

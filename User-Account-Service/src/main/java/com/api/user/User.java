@@ -1,5 +1,7 @@
 package com.api.user;
 
+import java.util.HashMap;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class User {
@@ -7,6 +9,8 @@ public class User {
 	String userName;
 	String email;
 	String password;
+	
+	private static HashMap<Integer, User> usersMap = new HashMap<>();
 	
 	public User() {
         // Needed for Jackson deserialisation
@@ -23,6 +27,15 @@ public class User {
 	public int getUserId() {
 		return userId;
 	}
+	
+	@JsonProperty
+	public void setUserId(int userId) {
+		this.userId = userId ;
+	}
+	
+	public static void updateUser(int userId, User user){
+		usersMap.put(userId, user);
+    }
 
 	@JsonProperty
 	public String getUserName() {
