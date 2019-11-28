@@ -8,6 +8,17 @@ public class User {
 	String email;
 	String password;
 	
+	public User() {
+        // Needed for Jackson deserialisation
+    }
+	
+	public User(int userId, String userName, String email, String password) {
+        this.userId = userId;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
+	
 	@JsonProperty
 	public int getUserId() {
 		return userId;
@@ -33,8 +44,4 @@ public class User {
 		this.password = password;
 	}
 	
-	public User(int userId, String userName, String email, String password) {
-		
-		
-	}
 }

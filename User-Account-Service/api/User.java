@@ -9,7 +9,7 @@ public class User {
 	private String password;
 	
 	public User() {
-        // Needed for Jackson deserialisation
+    // Needed for Jackson deserialisation
     }
 	
 	public User(int userId, String userName, String email, String password) {
@@ -38,7 +38,6 @@ public class User {
 	public String getPassword() {
 		return password;
 	}
-
 
 	public void setPassword(String password) {
 		this.password = password;

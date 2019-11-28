@@ -17,9 +17,11 @@ public class UserApiResource {
 
 	private HashMap<Integer, User> usersMap = new HashMap<>();
 
-	public UserApiResource() {
 	User testUser = new User(1, "John", "John.Murphy@gmail.com", "12345");
 	usersMap.put(testUser.getUserId(),testUser);
+	
+	public UserApiResource() {
+	
 	}
 	@GET
 	public Collection<User> getUsers() {
