@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -28,7 +29,7 @@ public class UserApiResource {
 
 	private HashMap<Integer, User> usersMap = new HashMap<>();
 	User testUser = new User(1,"John", "JohnMurphy@gmail.com", "1234");
-	User testUser1 = new User(2,"raja", "JohnMurphy@gmail.com", "1234");
+	User testUser1 = new User(2,"Arek", "Arek@gmail.com", "54545");
 
 	
 	//public UserApiResource() {
@@ -37,7 +38,7 @@ public class UserApiResource {
 	public UserApiResource() {
 		
 		usersMap.put(testUser.getUserId(),testUser);
-		usersMap.put(testUser1.getUserId(),testUser);
+		usersMap.put(testUser1.getUserId(),testUser1);
 	}
 	@GET
 	public Collection<User> getUser() {
@@ -64,5 +65,16 @@ public class UserApiResource {
     
 	}	
 	
+	
+	@DELETE
+    @Path("/{userId}")
+    public Response removeUserByUserId(@PathParam("userId") Integer id) {
+		User user = usersMap.get(id);
+        if (user != null) {
+            usersMap.remove(id);
+            return Response.ok().build();
+        } else
+            return Response.status(Status.ERROR).build();
+    }
 }
 
