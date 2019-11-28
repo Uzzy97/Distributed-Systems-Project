@@ -16,13 +16,16 @@ public class GrpcClient {
 		String userID = "G00345816";
 		// Creating Password for User to login
 		String password = "G00345816";
+
 		// Printing User Id and Password
 		System.out.println("User ID = " + userID + "\nUser Password = " + password);
 
+		// System.out.println("User id sent = " + user + "\nUser Password sent = " +
+		// pass);
+
 		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9090).usePlaintext().build();
 
-		// stubs - generated from proto
-
+		// stubs - generate from proto
 		userBlockingStub userStub = userGrpc.newBlockingStub(channel);
 
 		LoginRequest loginrequest = LoginRequest.newBuilder().setUsername(userID).setPassword(password).build();
@@ -30,7 +33,6 @@ public class GrpcClient {
 		APIResponse response = userStub.login(loginrequest);
 
 		System.out.println(response.getResponsemessage());
-		
 
 	}
 
