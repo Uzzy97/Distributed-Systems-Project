@@ -1,5 +1,9 @@
+// Usman Sattar - G00345816
+// Part 2 - RESTful User Account Service
+
 package com.client;
 
+// Imports
 import com.grpcproject.User.APIResponse;
 import com.grpcproject.User.LoginRequest;
 import com.grpcproject.userGrpc;
