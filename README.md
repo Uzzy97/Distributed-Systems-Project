@@ -18,6 +18,7 @@ The purpose of this project is to gain practical experience in interprocess comm
 
 ## Part 2 - RESTful User Account Service
 
+* Repository: **_https://github.com/Uzzy97/Distributed-Systems-Project_**
 * Clone repository on to desktop (**git clone _"https://github.com/Uzzy97/Distributed-Systems-Project.git"_**)
 * Open **grpcClient** folder
 * Open Command Prompt and Run **grpcClient-0.0.1-SNAPSHOT** by the following command **_"java -jar grpcClient-0.0.1-SNAPSHOT.jar server userApiConfig.yaml"_**
@@ -26,3 +27,7 @@ The purpose of this project is to gain practical experience in interprocess comm
 * Add **New Users**, **Delete Existing Users**, **Update Existing Users**, **Get All Users**
 * The above changes can be viewed on the **_"http://localhost:9000/users"_**, individual users can be viewed also.
 * For Example **_"http://localhost:9000/users/2"_**
+
+### Link To Swagger
+
+* **_"https://app.swaggerhub.com/apis/Uzzy97/UserApi/1.0.0"_** 
